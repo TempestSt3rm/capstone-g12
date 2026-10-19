@@ -1,0 +1,125 @@
+{
+  "evaluation": "later block within each existing recording; not independent visits",
+  "feature_representation": "all raw imaginary/real columns, training-only standard scaling",
+  "feature_count": 384,
+  "training_rows": 3000,
+  "test_rows": 800,
+  "test_fraction": 0.2,
+  "gap_rows": 50,
+  "model_parameters": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale"
+  },
+  "accuracy": 0.9925,
+  "baseline_accuracy": 0.25,
+  "classes": [
+    "x0y0",
+    "x0y1",
+    "x1y0",
+    "x1y1"
+  ],
+  "recordings": [
+    {
+      "label": "x0y0",
+      "source_csv": "C:\\Jeff_Documents\\Programming\\Capstone\\CSI_Collector\\Data\\x0y0.csv",
+      "total_rows": 1000,
+      "training_rows": 750,
+      "excluded_gap_rows": 50,
+      "test_rows": 200,
+      "first_test_csv_row": 802
+    },
+    {
+      "label": "x0y1",
+      "source_csv": "C:\\Jeff_Documents\\Programming\\Capstone\\CSI_Collector\\Data\\x0y1.csv",
+      "total_rows": 1000,
+      "training_rows": 750,
+      "excluded_gap_rows": 50,
+      "test_rows": 200,
+      "first_test_csv_row": 802
+    },
+    {
+      "label": "x1y0",
+      "source_csv": "C:\\Jeff_Documents\\Programming\\Capstone\\CSI_Collector\\Data\\x1y0.csv",
+      "total_rows": 1000,
+      "training_rows": 750,
+      "excluded_gap_rows": 50,
+      "test_rows": 200,
+      "first_test_csv_row": 802
+    },
+    {
+      "label": "x1y1",
+      "source_csv": "C:\\Jeff_Documents\\Programming\\Capstone\\CSI_Collector\\Data\\x1y1.csv",
+      "total_rows": 1000,
+      "training_rows": 750,
+      "excluded_gap_rows": 50,
+      "test_rows": 200,
+      "first_test_csv_row": 802
+    }
+  ],
+  "confusion_matrix_rows_true_columns_predicted": [
+    [
+      196,
+      0,
+      0,
+      4
+    ],
+    [
+      0,
+      200,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      198,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      200
+    ]
+  ],
+  "classification_report": {
+    "x0y0": {
+      "precision": 1.0,
+      "recall": 0.98,
+      "f1-score": 0.98989898989899,
+      "support": 200.0
+    },
+    "x0y1": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 200.0
+    },
+    "x1y0": {
+      "precision": 1.0,
+      "recall": 0.99,
+      "f1-score": 0.9949748743718593,
+      "support": 200.0
+    },
+    "x1y1": {
+      "precision": 0.970873786407767,
+      "recall": 1.0,
+      "f1-score": 0.9852216748768473,
+      "support": 200.0
+    },
+    "accuracy": 0.9925,
+    "macro avg": {
+      "precision": 0.9927184466019418,
+      "recall": 0.9924999999999999,
+      "f1-score": 0.9925238847869242,
+      "support": 800.0
+    },
+    "weighted avg": {
+      "precision": 0.9927184466019418,
+      "recall": 0.9925,
+      "f1-score": 0.9925238847869241,
+      "support": 800.0
+    }
+  }
+}
