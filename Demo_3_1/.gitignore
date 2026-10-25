@@ -1,0 +1,7 @@
+Radio/.pio/
+__pycache__/
+Data/*.csv
+Data/*.jsonl
+Data/*.partial
+DataProcessing/ml_results/
+Data/*.bin
