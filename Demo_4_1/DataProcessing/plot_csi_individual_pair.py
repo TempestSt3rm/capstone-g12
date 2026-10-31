@@ -1,4 +1,4 @@
-"""Save an 8x8 grid of real/imaginary density heatmaps for all 64 CSI pairs."""
+"""Save real/imaginary density heatmaps for up to 192 CSI pairs."""
 
 import argparse
 import json
@@ -24,28 +24,45 @@ def load_pairs(path):
             except ValueError as exc:
                 raise ValueError(f"{location}: expected one JSON response per line") from exc
             csi = record.get("csi") if isinstance(record, dict) else None
-            if (not isinstance(csi, list) or len(csi) != 128 or
+            if (not isinstance(csi, list) or not 2 <= len(csi) <= 384 or len(csi) % 2 or
                     not all(type(value) is int and -128 <= value <= 127 for value in csi)):
-                raise ValueError(f"{location}: expected 128 signed CSI values (64 imag/real pairs)")
-            samples.append(csi)
+                raise ValueError(f"{location}: expected 1..192 signed imag/real pairs (2..384 values)")
+            # Old LLTF-only recordings omitted four invalid leading bytes.
+            # New firmware retains the full buffer, including invalid bytes.
+            samples.append([float("nan")] * 4 + csi if len(csi) == 124 else csi)
     if not samples:
         raise ValueError(f"{path}: no CSI recordings found")
-    # Shape: measurements x 64 pairs x [imaginary, real].
-    return np.asarray(samples, dtype=float).reshape(-1, 64, 2)
+    # Preserve pair offsets. Shorter frames have no data for trailing pairs.
+    pair_count = max(len(sample) for sample in samples) // 2
+    values = np.full((len(samples), pair_count * 2), np.nan)
+    for row, sample in enumerate(samples):
+        values[row, :len(sample)] = sample
+    return values.reshape(-1, pair_count, 2)
 
 
 def plot_heatmaps(path, pairs, output_dir, bins, show):
-    bound = max(1, float(np.abs(pairs).max())) * 1.05
+    bound = max(1, float(np.nanmax(np.abs(pairs)))) * 1.05
     extent = (-bound, bound, -bound, bound)
-    fig, axes = plt.subplots(8, 8, figsize=(24, 24), sharex=True, sharey=True,
-                             layout="constrained")
+    pair_count = pairs.shape[1]
+    columns = min(8, pair_count)
+    rows = (pair_count + columns - 1) // columns
+    fig, axes = plt.subplots(rows, columns, figsize=(3 * columns, 3 * rows),
+                             sharex=True, sharey=True, squeeze=False, layout="constrained")
     plots = []
     for pair_index, ax in enumerate(axes.flat):
+        if pair_index >= pair_count:
+            ax.set_visible(False)
+            continue
         imag = pairs[:, pair_index, 0]
         real = pairs[:, pair_index, 1]
-        plot = ax.hexbin(real, imag, gridsize=bins, extent=extent, mincnt=1,
-                         cmap="viridis", norm=LogNorm(vmin=1))
-        plots.append(plot)
+        valid = np.isfinite(real) & np.isfinite(imag)
+        if valid.any():
+            plot = ax.hexbin(real[valid], imag[valid], gridsize=bins, extent=extent, mincnt=1,
+                             cmap="viridis", norm=LogNorm(vmin=1))
+            plots.append(plot)
+        else:
+            ax.text(0.5, 0.5, "Unavailable\nNo recorded values",
+                    ha="center", va="center", transform=ax.transAxes, fontsize=9)
         ax.set_title(f"Pair {pair_index}", fontsize=10)
         ax.set_xlim(-bound, bound)
         ax.set_ylim(-bound, bound)
@@ -54,17 +71,17 @@ def plot_heatmaps(path, pairs, output_dir, bins, show):
         ax.axvline(0, color="gray", linewidth=0.4, alpha=0.4)
         ax.tick_params(labelsize=7)
 
-    # Use one density scale and identical axes for all 64 panels.
+    # Use one density scale and identical axes for every pair.
     max_bin = max(2, max(float(plot.get_array().max()) for plot in plots))
     norm = LogNorm(vmin=1, vmax=max_bin)
     for plot in plots:
         plot.set_norm(norm)
-    fig.colorbar(plots[0], ax=list(axes.flat), shrink=0.6,
+    fig.colorbar(plots[0], ax=list(axes.flat)[:pair_count], shrink=0.6,
                  label="Measurement count per hexagon (log scale)")
     fig.supxlabel("Real")
     fig.supylabel("Imaginary")
-    fig.suptitle(f"{path.stem} — all 64 CSI pairs — {len(pairs)} measurements", fontsize=18)
-    output_path = output_dir / f"{path.stem}_all_64_heatmaps.png"
+    fig.suptitle(f"{path.stem} — all {pair_count} CSI pairs — {len(pairs)} measurements", fontsize=18)
+    output_path = output_dir / f"{path.stem}_all_{pair_count}_heatmaps.png"
     fig.savefig(output_path, dpi=160)
     print(f"Saved {output_path}")
     if show:

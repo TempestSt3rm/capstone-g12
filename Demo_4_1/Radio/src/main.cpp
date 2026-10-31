@@ -41,10 +41,7 @@ void disarm() {
 }
 
 void csi_callback(void*, wifi_csi_info_t* info) {
-    if (!info || !info->buf || info->len > MAX_CSI_BYTES) return;
-    // The hardware can mark the first four bytes invalid. Omit those bytes.
-    const size_t skip = info->first_word_invalid ? 4 : 0;
-    if (info->len <= skip) return;
+    if (!info || !info->buf || !info->len || info->len > MAX_CSI_BYTES) return;
     Sample sample = {};
     bool selected = false;
     portENTER_CRITICAL(&capture_mux);
@@ -55,8 +52,9 @@ void csi_callback(void*, wifi_csi_info_t* info) {
     }
     portEXIT_CRITICAL(&capture_mux);
     if (!selected) return;
-    sample.len = info->len - skip;
-    memcpy(sample.data, info->buf + skip, sample.len);
+    // Preserve every CSI byte, even when first_word_invalid flags the first four.
+    sample.len = info->len;
+    memcpy(sample.data, info->buf, sample.len);
     // Wi-Fi task: only copy to a queue; format/send in loop().
     xQueueOverwrite(samples, &sample);
 }
@@ -93,9 +91,16 @@ void setup() {
     WiFi.setSleep(false);
 
     wifi_csi_config_t config = {};
-    // LLTF only: a compact response and consistent training-field selection.
+    // Capture all available training fields without merging their values.
     config.lltf_en = true;
+    config.htltf_en = true;
+    config.stbc_htltf2_en = true;
+
+    config.ltf_merge_en = false;
     config.channel_filter_en = false;
+    config.manu_scale = false;
+    config.shift = 0;
+    
     ESP_ERROR_CHECK(esp_wifi_set_csi_config(&config));
     ESP_ERROR_CHECK(esp_wifi_set_csi_rx_cb(csi_callback, nullptr));
     ESP_ERROR_CHECK(esp_wifi_set_csi(true));
