@@ -95,8 +95,12 @@ void setup() {
     config.lltf_en = true;
     config.htltf_en = true;
     config.stbc_htltf2_en = true;
+
     config.ltf_merge_en = false;
     config.channel_filter_en = false;
+    config.manu_scale = false;
+    config.shift = 0;
+    
     ESP_ERROR_CHECK(esp_wifi_set_csi_config(&config));
     ESP_ERROR_CHECK(esp_wifi_set_csi_rx_cb(csi_callback, nullptr));
     ESP_ERROR_CHECK(esp_wifi_set_csi(true));
