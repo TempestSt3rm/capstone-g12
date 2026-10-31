@@ -98,9 +98,9 @@ void setup() {
 
     config.ltf_merge_en = false;
     config.channel_filter_en = false;
-    config.manu_scale = false;
+    config.manu_scale = true;
     config.shift = 0;
-    
+
     ESP_ERROR_CHECK(esp_wifi_set_csi_config(&config));
     ESP_ERROR_CHECK(esp_wifi_set_csi_rx_cb(csi_callback, nullptr));
     ESP_ERROR_CHECK(esp_wifi_set_csi(true));
