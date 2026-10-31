@@ -1,0 +1,4 @@
+Radio/.pio/
+Radio/include/local_config.h
+__pycache__/
+*.pyc
