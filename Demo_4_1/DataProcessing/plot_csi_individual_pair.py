@@ -24,10 +24,12 @@ def load_pairs(path):
             except ValueError as exc:
                 raise ValueError(f"{location}: expected one JSON response per line") from exc
             csi = record.get("csi") if isinstance(record, dict) else None
-            if (not isinstance(csi, list) or len(csi) != 128 or
+            if (not isinstance(csi, list) or len(csi) not in (124, 128) or
                     not all(type(value) is int and -128 <= value <= 127 for value in csi)):
-                raise ValueError(f"{location}: expected 128 signed CSI values (64 imag/real pairs)")
-            samples.append(csi)
+                raise ValueError(f"{location}: expected 124 or 128 signed CSI values")
+            # Demo 4_1 removes the first four bytes when first_word_invalid is
+            # set. Restore their positions as missing data, never as zeros.
+            samples.append([float("nan")] * 4 + csi if len(csi) == 124 else csi)
     if not samples:
         raise ValueError(f"{path}: no CSI recordings found")
     # Shape: measurements x 64 pairs x [imaginary, real].
@@ -35,7 +37,7 @@ def load_pairs(path):
 
 
 def plot_heatmaps(path, pairs, output_dir, bins, show):
-    bound = max(1, float(np.abs(pairs).max())) * 1.05
+    bound = max(1, float(np.nanmax(np.abs(pairs)))) * 1.05
     extent = (-bound, bound, -bound, bound)
     fig, axes = plt.subplots(8, 8, figsize=(24, 24), sharex=True, sharey=True,
                              layout="constrained")
@@ -43,9 +45,14 @@ def plot_heatmaps(path, pairs, output_dir, bins, show):
     for pair_index, ax in enumerate(axes.flat):
         imag = pairs[:, pair_index, 0]
         real = pairs[:, pair_index, 1]
-        plot = ax.hexbin(real, imag, gridsize=bins, extent=extent, mincnt=1,
-                         cmap="viridis", norm=LogNorm(vmin=1))
-        plots.append(plot)
+        valid = np.isfinite(real) & np.isfinite(imag)
+        if valid.any():
+            plot = ax.hexbin(real[valid], imag[valid], gridsize=bins, extent=extent, mincnt=1,
+                             cmap="viridis", norm=LogNorm(vmin=1))
+            plots.append(plot)
+        else:
+            ax.text(0.5, 0.5, "Unavailable\nInvalid bytes omitted",
+                    ha="center", va="center", transform=ax.transAxes, fontsize=9)
         ax.set_title(f"Pair {pair_index}", fontsize=10)
         ax.set_xlim(-bound, bound)
         ax.set_ylim(-bound, bound)
