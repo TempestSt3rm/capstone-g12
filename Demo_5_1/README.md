@@ -63,18 +63,24 @@ potentially invalid first word; this dashboard does not decode subcarrier IDs.
 
 ### Radio setup and terminal-only output
 
-1. Flash the transmitter and receiver with the matching board environments:
+1. Pick one transmitter and one receiver. Choose the PlatformIO environment for
+   each board and role. You can mix board types because all targets use the same
+   capture protocol.
+
+   | Board | Transmitter | Receiver |
+   | --- | --- | --- |
+   | ESP32-U (`esp32dev`) | `tx_esp32u` | `rx_esp32u` |
+   | ESP32 Pico | `tx_pico` | `rx_pico` |
+   | ESP32-S3 WROOM | `tx_wroom` | `rx_wroom` |
+
+   To flash an ESP32-U transmitter and a WROOM receiver, use these commands:
 
    ```powershell
    pio run -d Demo_5_1/Radio -e tx_esp32u -t upload --upload-port COM3
-   pio run -d Demo_5_1/Radio -e rx_esp32u -t upload --upload-port COM4
+   pio run -d Demo_5_1/Radio -e rx_wroom -t upload --upload-port COM4
    ```
 
-   Replace the COM ports with your devices. The ESP32-U environments use
-   `board = esp32dev` and the same transmitter/receiver source files. The default
-   build environment is `rx_esp32u`. For Pico boards use `tx_pico` / `rx_pico`;
-   for ESP32-S3 WROOM boards use `tx_wroom` / `rx_wroom` instead.
-   Serial monitor baud rate is 115200.
+   Replace the COM ports with your devices' ports. The serial monitor uses 115200 baud.
 
 2. Connect the laptop to `CAPSTONE_DEMO_5_1`, password `capstone51`.
    Wait for RX to register on the transmitter's serial monitor.

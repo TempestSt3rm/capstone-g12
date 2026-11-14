@@ -104,7 +104,8 @@ def make_figure(state, snapshot):
     ])
     figure.update_layout(template="plotly_white", margin=dict(l=65, r=25, t=35, b=60),
                          xaxis=dict(title="CSI pair index", range=[-0.75, state.pairs - 0.25], dtick=8),
-                         yaxis=dict(title="Amplitude √(I² + Q²) · raw units", rangemode="tozero"),
+                         yaxis=dict(title="Amplitude √(I² + Q²) · raw units",
+                                    range=[0, 100], autorange=False, fixedrange=True),
                          legend=dict(orientation="h", y=1.12), bargap=0.12,
                          uirevision="live-csi", transition_duration=0)
     return figure
