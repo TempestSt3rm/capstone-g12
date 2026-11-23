@@ -1,0 +1,3 @@
+__pycache__/
+.venv/
+# Raw recordings, manifests, and processed data are intentionally versioned.

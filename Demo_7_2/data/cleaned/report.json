@@ -1,0 +1,675 @@
+{
+  "raw_files": 21,
+  "completed_recordings": 21,
+  "accepted_packets": 5438,
+  "rejected_entries": 0,
+  "packets_by_distance_m": {
+    "0.5": 790,
+    "1.0": 798,
+    "1.5": 777,
+    "2.0": 735,
+    "2.5": 777,
+    "3.0": 780,
+    "3.5": 781
+  },
+  "recordings": [
+    {
+      "file": "20261123T174809_155991Z_0.5m_e3ae8d26-1393-4045-ad8d-c47e7cadd4ef.jsonl",
+      "distance_m": 0.5,
+      "packets": 288,
+      "recording_ids": [
+        "e3ae8d26-1393-4045-ad8d-c47e7cadd4ef"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T174908_479974Z_1.0m_c2606da1-56f5-4520-8bd6-ee1c39517d98.jsonl",
+      "distance_m": 1.0,
+      "packets": 267,
+      "recording_ids": [
+        "c2606da1-56f5-4520-8bd6-ee1c39517d98"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T174937_625585Z_1.5m_fab81714-503c-4876-8caa-1b04395b23d7.jsonl",
+      "distance_m": 1.5,
+      "packets": 263,
+      "recording_ids": [
+        "fab81714-503c-4876-8caa-1b04395b23d7"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175026_873436Z_2.0m_e2ef5499-6b30-4ad5-8c33-6355e97fd087.jsonl",
+      "distance_m": 2.0,
+      "packets": 229,
+      "recording_ids": [
+        "e2ef5499-6b30-4ad5-8c33-6355e97fd087"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175055_301581Z_2.5m_ae8ccb37-c4a7-4759-b22c-244e089a2277.jsonl",
+      "distance_m": 2.5,
+      "packets": 264,
+      "recording_ids": [
+        "ae8ccb37-c4a7-4759-b22c-244e089a2277"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175139_191186Z_3.0m_9dd9741d-4152-4f45-a112-f30a2a412ffa.jsonl",
+      "distance_m": 3.0,
+      "packets": 261,
+      "recording_ids": [
+        "9dd9741d-4152-4f45-a112-f30a2a412ffa"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175214_080855Z_3.5m_f4f2a9aa-78a8-44e0-8304-3819ae320264.jsonl",
+      "distance_m": 3.5,
+      "packets": 267,
+      "recording_ids": [
+        "f4f2a9aa-78a8-44e0-8304-3819ae320264"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175256_142680Z_1.0m_e382b095-1d8c-4ca5-9e45-b83ec44089f5.jsonl",
+      "distance_m": 1.0,
+      "packets": 265,
+      "recording_ids": [
+        "e382b095-1d8c-4ca5-9e45-b83ec44089f5"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175318_587022Z_2.0m_940aac11-7441-4938-894c-ded2d0e6113c.jsonl",
+      "distance_m": 2.0,
+      "packets": 252,
+      "recording_ids": [
+        "940aac11-7441-4938-894c-ded2d0e6113c"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175352_738831Z_3.0m_6bb30c4e-5198-4e03-b3ff-f1c63b44bad8.jsonl",
+      "distance_m": 3.0,
+      "packets": 250,
+      "recording_ids": [
+        "6bb30c4e-5198-4e03-b3ff-f1c63b44bad8"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175426_428167Z_3.5m_89b07a9c-80ec-4f75-a66b-18ef0a6ff458.jsonl",
+      "distance_m": 3.5,
+      "packets": 254,
+      "recording_ids": [
+        "89b07a9c-80ec-4f75-a66b-18ef0a6ff458"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175459_371500Z_2.5m_6997d6ea-0022-4b33-9502-61ea790c702c.jsonl",
+      "distance_m": 2.5,
+      "packets": 262,
+      "recording_ids": [
+        "6997d6ea-0022-4b33-9502-61ea790c702c"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175528_358231Z_1.5m_32b53e41-6bcb-4baa-846a-15e610a62fd3.jsonl",
+      "distance_m": 1.5,
+      "packets": 250,
+      "recording_ids": [
+        "32b53e41-6bcb-4baa-846a-15e610a62fd3"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175551_960753Z_0.5m_e749fe84-d7f7-4524-aa3e-8288e26fc648.jsonl",
+      "distance_m": 0.5,
+      "packets": 251,
+      "recording_ids": [
+        "e749fe84-d7f7-4524-aa3e-8288e26fc648"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175629_808417Z_3.5m_a1e72386-2281-48da-8f34-6937be14f1cb.jsonl",
+      "distance_m": 3.5,
+      "packets": 260,
+      "recording_ids": [
+        "a1e72386-2281-48da-8f34-6937be14f1cb"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175657_950801Z_3.0m_3ac9915f-7c3c-4151-8b9d-e5196e82b424.jsonl",
+      "distance_m": 3.0,
+      "packets": 269,
+      "recording_ids": [
+        "3ac9915f-7c3c-4151-8b9d-e5196e82b424"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175735_137173Z_2.5m_18f920c2-fee9-4e13-a849-08065450739f.jsonl",
+      "distance_m": 2.5,
+      "packets": 251,
+      "recording_ids": [
+        "18f920c2-fee9-4e13-a849-08065450739f"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175804_469206Z_2.0m_e083dc21-b465-4523-8c19-3bc9620632f7.jsonl",
+      "distance_m": 2.0,
+      "packets": 254,
+      "recording_ids": [
+        "e083dc21-b465-4523-8c19-3bc9620632f7"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175834_658384Z_1.5m_5eacc91b-5206-4d78-919c-20402e1858fb.jsonl",
+      "distance_m": 1.5,
+      "packets": 264,
+      "recording_ids": [
+        "5eacc91b-5206-4d78-919c-20402e1858fb"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175858_262869Z_1.0m_7e736608-134e-46f0-aab1-42955b2780aa.jsonl",
+      "distance_m": 1.0,
+      "packets": 266,
+      "recording_ids": [
+        "7e736608-134e-46f0-aab1-42955b2780aa"
+      ],
+      "orientations": [
+        ""
+      ]
+    },
+    {
+      "file": "20261123T175915_394144Z_0.5m_27fbd338-193e-41b6-97b1-d4780ea44d60.jsonl",
+      "distance_m": 0.5,
+      "packets": 251,
+      "recording_ids": [
+        "27fbd338-193e-41b6-97b1-d4780ea44d60"
+      ],
+      "orientations": [
+        ""
+      ]
+    }
+  ],
+  "scalar_features": [
+    "rssi",
+    "agc_gain",
+    "fft_gain"
+  ],
+  "radio_context_fields": [
+    "mcs"
+  ],
+  "fields": {
+    "agc_gain": {
+      "role": "feature",
+      "reason": "varying measured signal/gain metadata",
+      "present": 5438,
+      "unique": 12,
+      "examples": [
+        47,
+        48,
+        49,
+        50,
+        45
+      ]
+    },
+    "aggregation": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        1
+      ]
+    },
+    "ampdu_cnt": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "antenna": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "bandwidth": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        40
+      ]
+    },
+    "channel": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        6
+      ]
+    },
+    "csi_config": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        {
+          "channel_filter_en": false,
+          "htltf_en": true,
+          "lltf_en": true,
+          "ltf_merge_en": false,
+          "manu_scale": false,
+          "shift": 0,
+          "stbc_htltf2_en": true
+        }
+      ]
+    },
+    "csi_len": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        384
+      ]
+    },
+    "distance_m": {
+      "role": "target",
+      "reason": "distance label; never an input feature",
+      "present": 5438,
+      "unique": 7,
+      "examples": [
+        1.0,
+        0.5,
+        3.5,
+        3.0,
+        1.5
+      ]
+    },
+    "elapsed_s": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1150,
+      "examples": [
+        6.203,
+        4.953,
+        0.828,
+        2.875,
+        3.875
+      ]
+    },
+    "fec_coding": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "fft_gain": {
+      "role": "feature",
+      "reason": "varying measured signal/gain metadata",
+      "present": 5438,
+      "unique": 26,
+      "examples": [
+        -25,
+        -26,
+        -28,
+        -27,
+        -24
+      ]
+    },
+    "first_word_invalid": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        false
+      ]
+    },
+    "gain_available": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        true
+      ]
+    },
+    "mcs": {
+      "role": "radio_context",
+      "reason": "radio setting may affect CSI; not a default position feature",
+      "present": 5438,
+      "unique": 4,
+      "examples": [
+        7,
+        6,
+        5,
+        4
+      ]
+    },
+    "noise_floor": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        -97
+      ]
+    },
+    "orientation": {
+      "role": "grouping",
+      "reason": "retained for trial/session provenance, not model input",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        ""
+      ]
+    },
+    "packet_id": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 5438,
+      "examples": [
+        3418,
+        3419,
+        3420,
+        3421,
+        3422
+      ]
+    },
+    "rate": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        11
+      ]
+    },
+    "received_at_utc": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 5438,
+      "examples": [
+        "2026-11-23T17:48:09.179925+00:00",
+        "2026-11-23T17:48:09.206881+00:00",
+        "2026-11-23T17:48:09.254002+00:00",
+        "2026-11-23T17:48:09.305370+00:00",
+        "2026-11-23T17:48:09.329679+00:00"
+      ]
+    },
+    "received_monotonic_ns": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 5420,
+      "examples": [
+        70731546000000,
+        70741015000000,
+        70793296000000,
+        70796984000000,
+        70798812000000
+      ]
+    },
+    "recording_duration_s": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        10
+      ]
+    },
+    "recording_id": {
+      "role": "grouping",
+      "reason": "retained for trial/session provenance, not model input",
+      "present": 5438,
+      "unique": 21,
+      "examples": [
+        "e3ae8d26-1393-4045-ad8d-c47e7cadd4ef",
+        "3ac9915f-7c3c-4151-8b9d-e5196e82b424",
+        "c2606da1-56f5-4520-8bd6-ee1c39517d98",
+        "f4f2a9aa-78a8-44e0-8304-3819ae320264",
+        "7e736608-134e-46f0-aab1-42955b2780aa"
+      ]
+    },
+    "recording_started_at_utc": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 21,
+      "examples": [
+        "2026-11-23T17:48:09.158005+00:00",
+        "2026-11-23T17:56:57.952799+00:00",
+        "2026-11-23T17:49:08.481350+00:00",
+        "2026-11-23T17:52:14.081897+00:00",
+        "2026-11-23T17:58:58.278660+00:00"
+      ]
+    },
+    "request_id": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 5438,
+      "examples": [
+        581833872,
+        581833873,
+        581833874,
+        581833875,
+        581833876
+      ]
+    },
+    "rssi": {
+      "role": "feature",
+      "reason": "varying measured signal/gain metadata",
+      "present": 5438,
+      "unique": 11,
+      "examples": [
+        -53,
+        -54,
+        -56,
+        -55,
+        -57
+      ]
+    },
+    "rx_id": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        1
+      ]
+    },
+    "rx_state": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "schema_version": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        1
+      ]
+    },
+    "secondary_channel": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        1
+      ]
+    },
+    "session_id": {
+      "role": "grouping",
+      "reason": "retained for trial/session provenance, not model input",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        "f175880a-15b2-42ad-ac75-7cca2379ea86"
+      ]
+    },
+    "sgi": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "sig_len": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        354
+      ]
+    },
+    "sig_mode": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        1
+      ]
+    },
+    "stbc": {
+      "role": "excluded",
+      "reason": "constant across valid packets in this dataset",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        0
+      ]
+    },
+    "timestamp_us": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 5438,
+      "examples": [
+        356309689,
+        356341605,
+        356384647,
+        356428512,
+        356469873
+      ]
+    },
+    "tx_mac": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        [
+          112,
+          75,
+          202,
+          70,
+          28,
+          45
+        ]
+      ]
+    },
+    "type": {
+      "role": "excluded",
+      "reason": "bookkeeping/device identity; may encode collection order",
+      "present": 5438,
+      "unique": 1,
+      "examples": [
+        "capture"
+      ]
+    }
+  },
+  "limitations": [
+    "Nonconstant fields are candidates, not proven predictors of position.",
+    "Distance is a one-dimensional label, not an XY room coordinate.",
+    "Blank orientations cannot be recovered or inferred from recording order.",
+    "Never randomly split adjacent packets: hold out whole recording IDs.",
+    "A single acquisition session cannot establish cross-session generalization.",
+    "Exploratory constant masks use this dataset; refit feature selection on training groups before evaluation.",
+    "Pair offsets span training fields; no calibrated subcarrier mapping is assumed."
+  ]
+}
