@@ -2,7 +2,6 @@
 
 Run: python "Demo_7_2/data interpretation/experiment.py"
 Outputs: results.json, predictions.jsonl.gz, comparison.png in this folder/results.
-No unit tests or firmware operations are run. No model is deployed.
 """
 
 import argparse
